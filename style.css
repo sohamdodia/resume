@@ -122,19 +122,48 @@ a, a:visited {
 	margin-bottom: 2px;
 }
 
+@page {
+	size: A4 portrait;
+	margin: 12mm 14mm;
+}
+
 @media print {
+	body {
+		margin: 0;
+	}
+
 	.container {
 		width: 100%;
 	}
 
-	.job, .project {
-		page-break-inside: avoid;
-		break-inside: avoid;
+	.main .title {
+		font-size: 2em;
+		margin-bottom: 6px;
+	}
+
+	.section {
+		font-size: 11px;
 	}
 
 	.section .title {
+		font-size: 13px;
+		margin-top: 10px;
 		page-break-after: avoid;
 		break-after: avoid;
+	}
+
+	div.hr {
+		height: 0;
+		border: none;
+		border-top: 1px solid black;
+		background: none;
+		page-break-after: avoid;
+		break-after: avoid;
+	}
+
+	.job, .project, .avoid-break {
+		page-break-inside: avoid;
+		break-inside: avoid;
 	}
 
 	a, a:visited {
